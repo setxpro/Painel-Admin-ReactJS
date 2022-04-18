@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HeaderContainer } from '../../styles/Layout/styles';
 
 
@@ -11,7 +12,8 @@ type ThemeProps = {
 
 const Header: React.FC<ThemeProps> = ({ toggleTheme, showTheme }) => {
 
-    const [toggle, setToggle] = useState<ThemeProps>();
+    const [dropdown, setDropdown] = useState(false);
+    const showDropdownSettings = () => setDropdown(!dropdown);
 
   return (
       <HeaderContainer>
@@ -41,8 +43,21 @@ const Header: React.FC<ThemeProps> = ({ toggleTheme, showTheme }) => {
                         <p>Admin</p>
                     </div>
                     <C.ContainerAvarat>
-                        <img src="https://avatars.githubusercontent.com/u/69186374?s=400&u=793e08633e0ae7ee1f80b098767b3bdb5989c57c&v=4" alt=""/>
+                        <img src="https://avatars.githubusercontent.com/u/69186374?s=400&u=793e08633e0ae7ee1f80b098767b3bdb5989c57c&v=4" alt="" onClick={showDropdownSettings}/>
                         <span></span>
+                        <C.ContainerDropdown mode={dropdown}>
+                            <C.ContainerSettings>
+                                <Link to="/">Profile</Link>
+                                <Link to="/">In box</Link>
+                                <Link to="/">Tasks</Link>
+                                <Link to="/">Chats</Link>
+                              
+                                <Link to="">Setting</Link>
+                                <Link to="">Pricing</Link>
+                                <Link to="">FAQ</Link>
+                                <Link to="">Logout</Link>
+                            </C.ContainerSettings>
+                        </C.ContainerDropdown>
                     </C.ContainerAvarat>
                 </C.AreaAdmin>
           </C.ContainerRight>

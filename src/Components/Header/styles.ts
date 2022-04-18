@@ -69,6 +69,7 @@ export const ContainerAvarat = styled.div`
             width: 50px;
             height: 50px;
             border-radius: 50%; 
+            cursor: pointer;
         }
         span {
             position: absolute;
@@ -125,4 +126,40 @@ export const Bell = styled(AiOutlineBell)`
     color: ${props => props.theme.colors.icons};
     font-size: 2rem;
     cursor: pointer;
+`;
+
+
+// Functions Dropdown
+
+
+export const ContainerDropdown = styled.div<{mode: boolean}>`
+    display: ${props => props.mode ? 'block' : 'none'};
+`;
+
+export const ContainerSettings = styled.div`
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -80px;
+    width: 140px;
+    background-color: ${props => props.theme.colors.secondary};
+   
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1.2s ease;
+   
+
+    a {
+        width: 140px;
+        padding: 1rem 0;
+        color: ${props => props.theme.colors.text};
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 1px solid #FFF;
+
+        &:hover {
+            background: rgba(20, 0, 255,01);
+        }
+    }
 `;

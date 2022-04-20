@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Login from '../Login';
+import Register from '../Register';
 
 import { useForm, FormActions } from '../../../Context/FormContext';
 import * as C from './styles';
@@ -34,7 +34,7 @@ const Step1: React.FC = () => {
   }
 
   return (
-      <Login>
+      <Register>
           <C.Container>
                 <p>Passo {state.currentStep}/3</p>
                 <h1>Vamos começar com o seu nome.</h1>
@@ -54,7 +54,7 @@ const Step1: React.FC = () => {
 
                 <button onClick={handleNextStep}>Próximo</button>
             </C.Container>
-      </Login>
+      </Register>
   );
 }
 

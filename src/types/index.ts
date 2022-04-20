@@ -14,6 +14,7 @@ export type  State = {
     name: string;
     level: 0 | 1;
     email: string;
+    password: string;
     github: string;
 }   
 

@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect } from 'react';
 import { useForm, FormActions } from '../../../Context/FormContext';
 import { useNavigate } from 'react-router-dom';
 
-import Login from '../Login';
+import Register from '../Register';
 
 import * as C from './styles';
 
@@ -26,7 +26,7 @@ const Step3: React.FC= () => {
   },[dispatch]);
 
   const handleNextStep = () => {
-    if (state.email && state.github !== '') {
+    if (state.email !== '' && state.password !== '') {
         alert(`Ok ${state.name} agora é com a empresa!`) // OBS React-toastFy
        
         navigate('/')
@@ -42,15 +42,15 @@ const Step3: React.FC= () => {
          payload: e.target.value 
      });
   }
-  const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
      dispatch({
-         type: FormActions.setGithub,
+         type: FormActions.setPassword,
          payload: e.target.value 
      });
   }
 
   return (
-      <Login>
+      <Register>
           <C.Container>
                 <p>Passo {state.currentStep}/3</p>
                 <h1>Legal {state.name}, onde te achamos ?</h1>
@@ -68,17 +68,17 @@ const Step3: React.FC= () => {
                 </label>
 
                 <label>
-                    Qual é o seu Github ?
+                    Insira uma Senha
                     <input
-                        type="url"
-                        value={state.github}
-                        onChange={handleGithubChange}
+                        type="password"
+                        value={state.password}
+                        onChange={handlePassword}
                     />
                 </label>
                  <C.BackButton to="/step2">Voltar</C.BackButton>
                 <button onClick={handleNextStep}>Finalizar Cadastro</button>
             </C.Container>
-      </Login>
+      </Register>
   );
 }
 

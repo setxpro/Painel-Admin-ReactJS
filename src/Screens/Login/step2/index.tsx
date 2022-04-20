@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Login from '../Login';
+import Register from '../Register';
 
 import { useNavigate } from 'react-router-dom';
 import * as C from './styles';
@@ -43,7 +43,7 @@ const setLevel = (level: number) => {
 }
 
   return (
-      <Login>
+      <Register>
            <C.Container>
                 <p>Passo {state.currentStep}/3</p>
                 <h1>{state.name}, o que melhor descreve você ?</h1>
@@ -70,7 +70,7 @@ const setLevel = (level: number) => {
                 <C.BackButton to="/">Voltar</C.BackButton>
                 <button onClick={handleNextStep}>Próximo</button>
             </C.Container>
-      </Login>
+      </Register>
   );
 }
 

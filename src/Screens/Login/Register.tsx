@@ -7,7 +7,7 @@ import SidebarItem from './SidebarItem';
 
 import * as C from './styles';
 
-const Login: React.FC<ChildrenProps> = ({children}) => {
+const Register: React.FC<ChildrenProps> = ({children}) => {
 
     const { state } = useForm();
 
@@ -51,4 +51,4 @@ const Login: React.FC<ChildrenProps> = ({children}) => {
   );
 }
 
-export default Login;
+export default Register;

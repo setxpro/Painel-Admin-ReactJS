@@ -11,6 +11,7 @@ import light from './styles/Themes/light';
 import dark from './styles/Themes/dark';
 import { RouteStep } from './Routes';
 import { FormProvider } from './Context/FormContext';
+import GoLogin from './Screens/Login/GoLogin';
 
 
 
@@ -34,7 +35,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <FormProvider>
     
-        {!authenticated ? <RouteStep/> :
+        {!authenticated ?  <GoLogin/>: //<RouteStep/>
         
        <C.Container> 
         <Sidebar/> 

@@ -8,6 +8,8 @@ declare module 'styled-components' {
             secondary: string;
             text: string;
             icons: string;
+            iconsidebar: string;
+            table: string;
         }
     }
 }

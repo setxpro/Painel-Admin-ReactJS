@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.div`
     width: 85%;
     height: 100%;
-    border: 1px solid #f00;
+    /* border: 1px solid #f00; */
     margin: auto;
     margin-left: 300px;
     transition: all .3s ease;
@@ -11,6 +11,7 @@ export const Layout = styled.div`
 export const HeaderContainer = styled.div`
     position: sticky;
     top: 1rem;
+    z-index: 999;
 
     padding: 1rem;
     width: 85%;
@@ -19,6 +20,7 @@ export const HeaderContainer = styled.div`
     margin: auto;
     margin-top: 1rem;
     border-radius: 8px;
+    box-shadow: 0px 0px 2px #000;
     margin-left: 300px;
     margin-bottom: 1rem;
     background: ${props => props.theme.colors.secondary};

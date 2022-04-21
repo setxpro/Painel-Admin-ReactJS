@@ -49,7 +49,7 @@ export const SidebarContainer = styled.div`
 `;
 
 export const LayoutFormLogin = styled.div`
-    background-color: #02044A;
+    background-color: #161D31;
     color: #FFF;
     height: 100vh;
     min-height: 100vh;

@@ -14,7 +14,7 @@ export const Container = styled.div`
     hr {
         height: 1px;
         border: 0;
-        background-color: #16195C;
+        background-color: #B8B8D4;
         margin: 30px 0;
     }
     label {
@@ -30,7 +30,7 @@ export const Container = styled.div`
             color: #fff;
             outline: 0;
             font-size: 1rem;
-            background-color: #02044A;
+            background-color: #161D31;
         }
     }
     button {

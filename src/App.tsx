@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import * as C from './styles/AppStyles';
 
 import Header from './Components/Header';
@@ -11,7 +11,7 @@ import light from './styles/Themes/light';
 import dark from './styles/Themes/dark';
 import { RouteStep } from './Routes';
 import { FormProvider } from './Context/FormContext';
-import GoLogin from './Screens/Login/GoLogin';
+import { AlterAuthenticatedContext } from './Context/Auth/AlterAuthenticatedContext';
 
 
 
@@ -24,19 +24,16 @@ const App: React.FC = () => {
     toggle();
   }
 
- 
+  const { authenticated } = useContext(AlterAuthenticatedContext);
+
   const [showTheme, setShowTheme] = useState(true);
   const toggle = () => setShowTheme(!showTheme);
 
-  const [authenticated, setAuthenticated] = useState(false);
-  const toggleAuthenticated = () => setAuthenticated(!authenticated);
-
   return (
     <ThemeProvider theme={theme}>
+      
       <FormProvider>
-    
-        {!authenticated ?  <GoLogin/>: //<RouteStep/>
-        
+      {authenticated ? 
        <C.Container> 
         <Sidebar/> 
           <C.ContainerGenerate> 
@@ -44,8 +41,9 @@ const App: React.FC = () => {
             <Main/> 
           </C.ContainerGenerate> 
         </C.Container> 
-        }
-        </FormProvider>
+        :
+        <RouteStep />  }
+      </FormProvider>
     </ThemeProvider> 
   );
 }

@@ -13,6 +13,9 @@ export default createGlobalStyle`
         user-select: none;
     }
 
+    html {
+        font-size: calc(60% + 0.8vmin); // Garante na responsividade
+    }
 
 
 `;

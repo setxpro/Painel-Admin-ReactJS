@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
             <C.ContainerScroll>
                     <details>
                         <summary onClick={dropMode}>Options {drop ? <C.ArrowUp/> : <C.ArrowDown/>}</summary>
-                           <Link to="/" onClick={isActive} ><span></span>Analytcs</Link>
+                           <Link to="/analitcs" onClick={isActive} ><span></span>Analytcs</Link>
                             <Link to="/comercio-eletronico" onClick={isActive}><span></span>Comércio eletrônico</Link>
                     </details>
                     <h2>APPS & PAGES</h2>

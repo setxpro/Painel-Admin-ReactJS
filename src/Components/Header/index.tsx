@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AlterAuthenticatedContext } from '../../Context/Auth/AlterAuthenticatedContext';
+import { AuthContext } from '../../Context/Auth/AuthContext';
 import { HeaderContainer } from '../../styles/Layout/styles';
 
 
@@ -12,11 +14,22 @@ type ThemeProps = {
 
 const Header: React.FC<ThemeProps> = ({ toggleTheme, showTheme }) => {
 
+    const { isNotAuthenticated } = useContext(AlterAuthenticatedContext);
+
     const [dropdown, setDropdown] = useState(false);
     const showDropdownSettings = () => setDropdown(!dropdown);
 
     const [showInputSearch, setShowIputSearch] = useState(false);
     const toggleInput = () => setShowIputSearch(!showInputSearch);
+
+    const aut = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+    await aut.logout();
+    isNotAuthenticated()
+    navigate('/login');
+  }
 
   return (
       <HeaderContainer>
@@ -81,7 +94,7 @@ const Header: React.FC<ThemeProps> = ({ toggleTheme, showTheme }) => {
                                     <Link to="">Setting</Link>
                                     <Link to="">Pricing</Link>
                                     <Link to="">FAQ</Link>
-                                    <Link to="">Logout</Link>
+                                    <Link to="" onClick={handleLogout}>Logout</Link>
                                 </C.ContainerSettings>
                             </C.ContainerDropdown>
                         </C.ContainerAvarat>

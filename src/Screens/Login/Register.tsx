@@ -21,7 +21,7 @@ const Register: React.FC<ChildrenProps> = ({children}) => {
                                 title="Pessoal"
                                 description="Se identifique!"
                                 icon="profile"
-                                path="/"
+                                path="/step1"
                                 active={state.currentStep === 1}
                             />
 

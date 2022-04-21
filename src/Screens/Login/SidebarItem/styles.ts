@@ -47,5 +47,5 @@ export const Point = styled.div<{active: boolean}>`
     border-radius: 50%;
     margin-left: 30px;
     margin-right: -7px;
-    background-color: ${props => props.active ? '#25CD89' : '#02044A'};
+    background-color: ${props => props.active ? '#25CD89' : '#161D31'};
 `;

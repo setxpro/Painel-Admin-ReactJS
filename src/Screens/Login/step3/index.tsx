@@ -28,8 +28,7 @@ const Step3: React.FC= () => {
   const handleNextStep = () => {
     if (state.email !== '' && state.password !== '') {
         alert(`Ok ${state.name} agora é com a empresa!`) // OBS React-toastFy
-       
-        navigate('/')
+        navigate('/login')
     }
     else {
         navigate('/step1');

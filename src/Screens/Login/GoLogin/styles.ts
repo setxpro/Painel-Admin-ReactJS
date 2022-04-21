@@ -8,9 +8,20 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
 
-    color: #D0D2D6;
+    a {
+        text-decoration: none;
+        button {
+            background-color: #D0D3D6;
+            padding: 10px 1rem;
+            border-radius: .6rem;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            margin-left: -350px;
+            margin-top: 98px;
+        }
+    }
 `;
 export const AreaForm = styled.div`
     height: 70%;
@@ -21,10 +32,12 @@ export const AreaForm = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    
 `;
 export const Form = styled.form`
     width: 60%;
-    
+
 `;
 
 export const InputGroup = styled.div`

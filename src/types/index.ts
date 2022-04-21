@@ -48,3 +48,11 @@ export type AuthContextProps = {
     authenticated: boolean;
     toggleAuthenticated: () => void;
 }
+
+
+export type User = {
+    id: number;
+    name: string;
+    email: string;
+    password?: string;
+}

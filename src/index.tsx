@@ -5,6 +5,7 @@ import App from './App';
 import { AlterAuthenticatedProvider } from './Context/Auth/AlterAuthenticatedContext';
 import { AuthProvider } from './Context/Auth/AuthProvider';
 import GlobalStyles from './styles/GlobalStyles';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

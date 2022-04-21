@@ -12,7 +12,7 @@ import dark from './styles/Themes/dark';
 import { RouteStep } from './Routes';
 import { FormProvider } from './Context/FormContext';
 import { AlterAuthenticatedContext } from './Context/Auth/AlterAuthenticatedContext';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -29,9 +29,10 @@ const App: React.FC = () => {
   const [showTheme, setShowTheme] = useState(true);
   const toggle = () => setShowTheme(!showTheme);
 
+ 
   return (
     <ThemeProvider theme={theme}>
-      
+      <ToastContainer/>
       <FormProvider>
       {authenticated ? 
        <C.Container> 

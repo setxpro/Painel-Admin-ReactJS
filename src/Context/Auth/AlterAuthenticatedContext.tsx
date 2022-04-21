@@ -2,12 +2,13 @@ import { createContext, useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "./AuthContext";
 
-export const AlterAuthenticatedContext = createContext({
-    authenticated: false,
-    isAuthenticated: () => {},
-    isNotAuthenticated: () => {},
-   
-})
+export interface AlterProps {
+    authenticated: boolean;
+    isAuthenticated: () => void;
+    isNotAuthenticated: () => void;
+}
+
+export const AlterAuthenticatedContext = createContext({} as AlterProps)
 
 export const AlterAuthenticatedProvider = ({children}:{children: JSX.Element}) => {
 
